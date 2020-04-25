@@ -1,0 +1,6 @@
+C:\Users\hoang\Documents
+E:\Musics
+F:\SourcesJava\Baitap\Ikaros\file\img\background\ikaros05.jpg
+1
+0,204,255
+18

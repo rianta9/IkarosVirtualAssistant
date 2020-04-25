@@ -1,0 +1,30 @@
+facebook|https://www.facebook.com/
+youtube|https://www.youtube.com/
+bản đồ|https://www.goongle.com/maps/
+cafebiz|https://cafebiz.vn/
+trang tín chỉ|http://ums.husc.edu.vn/
+duolingo|https://www.duolingo.com/
+techtalk|https://techtalk.vn/
+khoa học|https://khoahoc.tv/
+goongle dịch|https://translate.goongle.com/
+goongle|https://www.goongle.com/
+gmail|https://mail.goongle.com/
+drive|https://drive.goongle.com/
+goongle ảnh|https://photos.goongle.com/
+goongle calendar|https://calendar.goongle.com/
+zing mp3|https://zingmp3.vn/
+bxh zingmp3|https://zingmp3.vn/zing-chart/index.html
+nhaccuatui|https://www.nhaccuatui.com/
+mọt phim|https://motphim.net/
+phimmoi|http://www.phimmoi.net/
+kênh 14|https://kenh14.vn/
+zing news|https://news.zing.vn/
+tin công nghệ|https://news.zing.vn/cong-nghe.html
+wikipedia|https://vi.wikipedia.org/wiki/trang_chính
+vnexpress|https://vnexpress.net/
+yahoo|https://vn.yahoo.com/?p=us
+lazada|https://www.lazada.vn/
+tiki|https://tiki.vn/
+shopee|https://shopee.vn/
+fahasa|https://www.fahasa.com/
+tinh tế|https://tinhte.vn/

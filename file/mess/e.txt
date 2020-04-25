@@ -1,0 +1,5 @@
+end|Ikaros không có chức năng này đâu ạ|Là sao master?|What do you mean?|You mean?
+endchat|Ikaros không có chức năng này đâu ạ|Là sao master?|What do you mean?|You mean?
+end chat|Ikaros không có chức năng này đâu ạ|Là sao master?|What do you mean?|You mean?
+english|Ikaros không giỏi tiếng anh đâu|Master muốn gì vậy ạ?|Là sao master?
+ending|là sao master?|ending là sao ạ?|ikaros không hiểu master muốn nói gì cả
