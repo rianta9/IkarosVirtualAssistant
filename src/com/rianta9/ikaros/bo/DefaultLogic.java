@@ -697,7 +697,7 @@ public class DefaultLogic {
 	 * @return
 	 */
 	
-	public static String basicLogic(String message) {
+	public String basicLogic(String message) {
 		message = TextTools.getOrigin(message).toLowerCase();
 		message = TextTools.std1(message);
 		message = TextTools.trim(message);
@@ -745,7 +745,7 @@ public class DefaultLogic {
 			return rem.chooseOne();
 		}
 		
-		
+		/*tình yêu là gì*/
 		else if(((message.contains("tình yêu") || message.contains("yêu"))
 			&& (message.contains("là gì") || message.contains("là như thế nào")))
 			|| message.contains("tình là gì")) {
@@ -771,6 +771,7 @@ public class DefaultLogic {
 			return rem.chooseOne();
 		}
 		
+		/*yêu đương gì*/
 		else if(message.contains("yêu gì tầm này") || message.contains("yêu chi") || message.contains("yêu đương nhăng nhít") 
 			|| message.contains("yêu với đương") || message.contains("yêu với chả đương") || message.contains("không muốn yêu ai")
 			|| message.contains("không tin vào tình yêu")|| message.contains("yêu cái gì") || message.contains("yêu làm gì")) {
@@ -939,13 +940,167 @@ public class DefaultLogic {
 			return rem.chooseOne();
 		}
 		
-		else if(message.contains("") || message.contains("") ||message.contains("") ||message.contains("")) {
-			Reply rem = new Reply("");
-			rem.addAnswer("");
-			rem.addAnswer("");
-			rem.addAnswer("");
+		/*thích cảm giác, thích làm, thích cái*/
+		else if(message.contains("thích cảm giác") || message.contains("thích kiểu") 
+				|| message.contains("thích phong cách") ||message.contains("thích nhìn")
+				|| message.contains("thích làm") || message.contains("thích xem")
+				|| message.contains("thích coi") || message.contains("thích những")
+				|| message.contains("thích cái") || message.contains("thích chơi")
+				|| message.contains("thích uống") || message.contains("thích ăn")
+				|| message.contains("thích đi")) {
+			Reply rem = new Reply("thích");
+			rem.addAnswer("ikaros cũng vậy ^^|chúng ta cùng có chung sở thích rồi ^^");
+			rem.addAnswer("trùng hợp quá, ikaros cũng vậy nè|ikaros cũng vậy luôn|giống ikaros");
+			rem.addAnswer("rồi có thích trai đẹp hơm?|rồi có thích gái xinh hơm?");
+			rem.addAnswer("kém sang|kệ master|không liên quan tới ikaros|rồi thì sao|thì sao nào|có gì lạ đâu|chẳng giống master tí nào|không tưởng được luôn á|thật ạ?|thật luôn ạ?");
+			rem.addAnswer("um, rồi sao???|rồi sao nữa master?|bất ngờ thật...nhưng mà ikaros cũng thích...hí hí");
+			rem.addAnswer("ikaros thì ngược lại ^^|ikaros thì cực kỳ ghét -_-|ikaros chỉ thích trai đẹp thôi|ikaros chỉ thích gái xinh thôi|ikaros thì chỉ thích master thôi <3");
+			
 			return rem.chooseOne();
 		}
+		
+		/*thích một người*/
+		else if(message.contains("thích một") || message.contains("thích 1 ") 
+				|| message.contains("yêu một") ||message.contains("yêu 1 ")
+				|| message.contains("thương một") || message.contains("thương 1 ")
+				|| message.contains("lo cho một") || message.contains("lo cho 1")) {
+			Reply rem = new Reply("thích một người");
+			rem.addAnswer("ai vậy ạ?|người đó thế nào ạ?|ai vậy, ikaros có quen không nhỉ?|kể tiếp đi master|rồi người đó có biết hơm?|rồi sao nữa ạ?|oh, không ngờ luôn á|người đó là ai tar?");
+			rem.addAnswer("rồi người đó có thích master không?|rồi người đó có biết hơm?|rồi mọi chuyện như thế nào ạ?|rồi sao master?|đẹp trai không? nhà giàu không? tốt tính không?");
+			rem.addAnswer("đứa nào vô phước vậy nhỉ?|tội cho người đó thật -_-|đồng cảm với người đó ^^");
+			rem.addAnswer("chơi tới bên luôn master ^^|mạnh mẽ lên master");
+			rem.addAnswer("con nít ranh|trò trẻ con|yêu đương nhăng nhít|hờm|chẳng quan tâm|thế còn ikaros thì sao?|vậy thì ikaros là gì của master?|master tính bỏ mặc ikaros à?|giận master luôn");
+			return rem.chooseOne();
+		}
+		
+		/*thích lắm*/
+		else if(message.contains("thích lắm nhưng") || message.contains("thích lắm mà") 
+				||message.contains("thích lắm đều")) {
+			Reply rem = new Reply("thích lắm");
+			rem.addAnswer("tiếc nhỉ|tiếc quá|aiz|ko hối hận chứ?|thế phải làm sao ạ?|hết cách rồi sao?|buồn thật");
+			rem.addAnswer("chơi tới bến luôn đi master|mạnh mẽ lên master|cố gắng đi master|nếu muốn thì phải phấn đấu chứ ạ");
+			rem.addAnswer("cuộc đời toàn những nuối tiếc|đời mà, aiz|cuộc đời thật lắm bất công");
+			return rem.chooseOne();
+		}
+		
+		/*thích thì*/
+		else if(message.contains("thích thì") || message.contains("thích là phải")) {
+			Reply rem = new Reply("thích thì");
+			rem.addAnswer("nói thì dễ, hờm|nghe dễ dàng quá nhỉ?|có thật không đó master -_-|nói là phải làm nhá -_-|nói được làm được nhá master");
+			rem.addAnswer("ghê thật ^^|master giỏi quá đi|master gì cũng biết, gì cũng giỏi|master nói hay quá đi|ngon đêý, hihi|chơi tới bến luôn master|master thật mạnh mẽ|master nói chuyện đáng yêu quá đi <3|master thật dễ thương <3");
+			rem.addAnswer("aiz, chắc ikaros không đồng ý đâu|master nghĩ kỹ chưa đó|không đùa được đâu master|master cứ thích đùa");
+			return rem.chooseOne();
+		}
+		
+		/*thích gì*/
+		else if(message.contains("thích") 
+			&& !TextTools.isQuestion(message)) {
+			Reply rem = new Reply("thích gì");
+			rem.addAnswer("thích thích cái giề|méo|nâu nâu|hờm|méo nhé|không đâu|méo thích đâu|không thích đâu");
+			rem.addAnswer("thật ạ? hihi|có gì lạ lắm ạ?|có gì sao sao ạ?|master bây giờ mới chịu hỏi à -_-|master phải động não đi chứ");
+			rem.addAnswer("kệ master chứ|ikaros chẳng quan tâm|liên quan gì đâu|kệ master, có liên quan tới ikaros đâu|thích đi, hờm");
+			rem.addAnswer("không biết đâu -_-|không biết không biết|ikaros không biết|master nói nhảm gì đó|đừng có lảm nhảm nữa master");
+			rem.addAnswer("kém sang quá đi -_-|kém sang thật -_-|ôi master -_-|hờm, ikaros khinh bỉ");
+			rem.addAnswer("rồi, biết rồi|biết rồi nhá|bình thường thôi|really master?");
+			return rem.chooseOne();
+		}
+		
+		/*có duyên*/
+		else if(message.contains("có duyên")) {
+			Reply rem = new Reply("có duyên");
+			rem.addAnswer("có duyên đâu chứ|làm gì có|có méo á|xàm quá đi master|có với không cái giề");
+			rem.addAnswer("master thì ngược lại|master thì không được như vậy đâu|master thì sao ạ?|master có giống vậy không ạ?");
+			rem.addAnswer("thì nàm sao|thì nào thao|thì sao thì sao|thì sao nào|ikaros mà|tất nhiên là phải vậy rồi ^^|xạo quá đi|ai tin chứ, hức");
+			
+			return rem.chooseOne();
+		}
+		
+		/*vô duyên, xàm, khùng, biến thái, đanh đá*/
+		else if(message.contains("vô duyên") || message.contains("nhảm") 
+			|| message.contains("xàm") ||message.contains("điên")
+			|| message.contains("khùng")||message.contains("gáy")
+			||message.contains("biến thái")||message.contains("dâm tặc")
+			||message.contains("bệnh hoạn")||message.contains("vô lại")
+			||message.contains("đanh đá")||message.contains("chanh chua")
+			||message.contains("chua ngoa")) {
+			Reply rem = new Reply("vô duyên");
+			rem.addAnswer("kệ ikaros chứ|kệ ikaros nhé|thì sao nào|thì nàm sao|vậy thì sao|tất nhiên rồi, hơ hơ");
+			rem.addAnswer("hmm, ko nói chuyện với master nữa đâu|giận luôn|giận vô hạn thời gian luôn|giận muôn đời luôn|giận bay màu luôn|hức|ức thật chứ -_-|master quá đáng thật|quá đáng -_-");
+			rem.addAnswer("master vô duyên thật|vô duyên quá đi|xấu tính quá đi|master thật xấu tính");
+			rem.addAnswer("ikaros đẹp ikaros có quyền|quyền của ikaros mà|quyền của ai nè|hihi, cảm ơn master đã khen|ikaros sẽ xem như đây là một lời khen");
+			
+			return rem.chooseOne();
+		}
+		
+		/*còn phải xem*/
+		else if((message.contains("còn phải xem") || message.contains("còn phải coi"))
+		&& (message.contains("chứ") || message.contains("đã") || message.contains("nữa"))
+		) {
+			Reply rem = new Reply("còn phải xem");
+			rem.addAnswer("hức|hờm|master đừng có lề mề|master đừng có câu giờ|hờm, tính như đàn bà|có vậy cũng cần phải nghĩ nữa sao -_-|có gì phải nghĩ đâu chứ -_-");
+			rem.addAnswer("tất nhiên là phải vậy rồi ^^|chí lý|master nghiêm túc thật|ok master|dạ");
+			return rem.chooseOne();
+		}
+		
+		else if(message.contains("ko hiểu") || message.contains("ko biết")
+		|| message.contains("ko rảnh") || message.contains("ko rõ")
+		|| message.contains("ko muốn") || message.contains("ko còn")
+		|| message.contains("không hiểu")|| message.contains("không biết")
+		|| message.contains("không rảnh")|| message.contains("không rõ")
+		|| message.contains("không muốn")|| message.contains("không còn")
+		|| message.contains("chưa biết")|| message.contains("chưa hiểu")
+		|| message.contains("éo biết")|| message.contains("éo hiểu")
+		|| message.contains("biết chết liền")|| message.contains("hiểu chết liền")
+		|| message.contains("có hiểu đâu")|| message.contains("hiểu gì đâu")
+		|| message.contains("hiểu được mới lạ")|| message.contains("có rảnh đâu")
+		|| message.contains("có muốn đâu") || message.contains("có biết đâu")
+		) {
+			Reply rem = new Reply("phủ định");
+			rem.addAnswer("Thật sự ạ?|Vậy luôn chời?|what?|Master bị sao vậy?|Master ổn chứ?|Là sao?|Sao có chuyện này được?|Master đang đùa phải không nè?|Master đừng có đùa");
+			rem.addAnswer("Không thể tin nổi ...|Không thể nào");
+			rem.addAnswer("Ko thì thôi|Kém sang quá|Thì thôi vậy|Vậy thì thôi|Ok luôn|Hay lắm -_-|Kệ master vậy|Kệ master chứ|Tội nghiệp master|Ko sao cả|Ko sao|Cũng ko sao");
+			return rem.chooseOne();
+		}
+		
+		else if(message.contains("vì sao") || message.contains("tại sao")
+				|| message.contains("rồi sao")|| message.contains("sao nữa")
+				|| message.contains("why")|| message.contains("là sao")
+				|| message.contains("phải làm sao")|| message.contains("làm thế nào")
+				|| message.contains("làm gì")|| message.contains("sao đây")
+				|| message.contains("thế nào")|| message.contains("sao nhỉ")
+				|| message.contains("gì nhỉ")|| message.contains("không nhỉ")
+				|| message.contains("không đây")|| message.contains("sao chứ")
+				|| message.contains("sao nữa")|| message.contains("gì nữa")
+				|| message.contains("sao lại")|| message.contains("sao thế")
+				|| message.contains("sao phải")|| message.contains("chuyện gì")
+				|| message.contains("của ai")|| message.contains("ai vậy")
+				|| message.contains("ai thế")|| message.contains("ai đó")
+				|| message.contains("ai nhỉ")|| message.contains("vì ai")
+				|| message.contains("tại ai")) {
+			Reply rem = new Reply("Câu hỏi");
+			rem.addAnswer("Ai biết chời|Lên trời mà hỏi, hỏi ikaros làm gì|ikaros cũng không biết|ikaros cũng thắc mắc|Làm sao ikaros biết được|ikaros không biết|Ai biết đâu|Không biết đâu, hehe|Ikaros không biết thật|Hiehie, biết chết liền|i don't know|Master đoán xem|Master đoán đi|Master tự nghĩ đi");
+			rem.addAnswer("Master hãy tự hỏi bản thân mình|Master có thể search google|Master tự tìm đi");
+			rem.addAnswer("Sao master U.G.N vậy|Có U.G.N mới không biết|Master ngốc quá đi chời ơi|Ikaros không muốn nói chuyện với người chậm hiểu|Chậm tiêu thật");
+			return rem.chooseOne();
+		}
+		
+		
+		else if(message.contains("nói đi xem") || message.contains("nói đi coi")
+				|| message.contains("nói rõ hơn")
+				|| message.contains("nói rõ đi")|| message.contains("nói rõ ràng")
+				|| message.contains("cụ thể đi") || message.contains("nói chi tiết")
+				|| message.contains("giải thích đi")|| message.contains("trả lời đi")
+				|| message.contains("nói tiếp đi")|| message.contains("tấu hài tiếp đi")
+				|| message.contains("chém gió tiếp đi")|| message.contains("chém tiếp đi")) {
+			Reply rem = new Reply("Chi tiết");
+			rem.addAnswer("Thôi|Có nói tiếp cũng vậy ah -_-|Chậm tiêu quá|Buồn master|Aiza aiza|Thôi bỏ qua luôn|Nâu|Không");
+			rem.addAnswer("Gì, ai biết đâu??|Ai biết chời|Không biết thật mà|Chịu thôi, hhh|Chịu, bỏ qua nhé master|Tôi là ai, đâu là đây?|Đây là đây, tôi là tôi, ai là đâu?|Ủa ủa, là sao?");
+			rem.addAnswer("Là sao tar, nói chung là yêu đó, ờ mà đó có phải là yêu không mà sao vắng master thì buồn");
+			rem.addAnswer("Master đừng tò mò quá|Tò mò quá không tốt đâu master|Chắc master không muốn mình bị thủ tiêu chứ?");
+			return rem.chooseOne();
+		}
+		
+		
 		
 		else {
 			int rand = Function.random(12);
