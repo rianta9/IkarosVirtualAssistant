@@ -13,6 +13,7 @@ public class IkarosSystem {
 	public Reply newApplyData; // Ghi nhớ Reply mới, nếu được training thì sẽ add vào list data. Nếu không thì không add vào.
 	public boolean useFunction; // Đang sử dụng chức năng
 	public String topic; // Chủ đề đang nói chuyện
+	public DefaultLogic logic;
 	
 	public IkarosSystem() {
 		RepDao.load(); // Load toàn bộ dữ liệu reply từ file data.
@@ -20,6 +21,7 @@ public class IkarosSystem {
 		this.remember = null;
 		this.topic = "";
 		this.useFunction = false;
+		logic = new DefaultLogic();
 	}
 	
 	
@@ -90,7 +92,7 @@ public class IkarosSystem {
 		if(logicAnswer != null) {
 			String[] parse = logicAnswer.split("[|]");
 			this.topic = parse[0];
-			System.out.println("Type message: Phải trả lời bằng mặc định.");
+			System.out.println("Type message: Tin nhắn cần trả lời bằng special logic");
 			return TextTools.std4(parse[1]);
 		}
 		else {
@@ -103,7 +105,7 @@ public class IkarosSystem {
 		logicAnswer = DefaultLogic.functionLogic(message);
 		if(logicAnswer != null) {
 			useFunction = true;
-			System.out.println("Type message: Yêu cầu chức năng.");
+			System.out.println("Type message: Tin nhắn yêu cầu chức năng.");
 			return TextTools.std4(logicAnswer);
 		}
 		else System.out.println("Result: null");
@@ -111,7 +113,7 @@ public class IkarosSystem {
 		/*-----------------------------------------------------------------------*/
 		// type 2: normal message
 		// Còn lại: Trả lời bằng data
-		System.out.println("Search data...");
+		System.out.println("Search in data files...");
 		Reply reply = search(message); // Tìm data trong RepList
 		if(reply != null) {
 			if(Function.random(29) == 22) {
@@ -122,7 +124,7 @@ public class IkarosSystem {
 			else {
 				String mess = reply.chooseOne();
 				if(mess != null) {
-					System.out.println("Type message: Trả lời theo data.");
+					System.out.println("Type message: Tin nhắn trả lời theo data.");
 					return TextTools.std4(mess);
 				}
 				else{
@@ -133,6 +135,7 @@ public class IkarosSystem {
 			}
 		}
 		else { // Nếu không có data trong RepList
+			System.out.println("Result: null");
 			if(Function.random(12) == 9) { // Nếu random đc số 12
 				Reply newReply = new Reply(message); // Tạo mới 1 Reply
 				//addData(newReply); // Add Reply vào list
@@ -142,7 +145,8 @@ public class IkarosSystem {
 			}
 			else {
 				//Nếu tồn tại logic có sẵn, trả lời theo logic 
-				logicAnswer = DefaultLogic.basicLogic(message);
+				System.out.println("Search keywords...");
+				logicAnswer = logic.baseLogic(message);
 				if(logicAnswer != null) {
 					System.out.println("Type message: Trả lời theo keywords");
 					return TextTools.std4(logicAnswer);

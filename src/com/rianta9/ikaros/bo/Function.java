@@ -220,26 +220,30 @@ public class Function {
 	 */
 	public static String howTo(String question) {
 		System.out.println("Truy vấn: " + question);
-		String searchText = question + " wikihow";
-		String url = "https://www.google.com/search?q=" + searchText;
+		String searchText = question;
+		String url = "https://www.wikihow.vn/wikiHowTo?search=" + searchText;
 		try {
-			Document google = Jsoup.connect(url).get();
+			Document wikiHow = Jsoup.connect(url).get();
 			// List link result
-			Elements links = google.select("div.rc > div.r > a");
+			Elements links = wikiHow.select("a.result_link");
 			// Choose First link
 			String firstLink = links.first().attr("abs:href");
+			System.out.println("Choose link: " + firstLink);
 			// Load page
 			Document doc = Jsoup.connect(URLDecoder.decode(firstLink, "UTF-8")).userAgent("Mozilla/5.0").timeout(6000).get();
 			
-			Elements sections = doc.select("div.section.steps.sticky");
 			String result = doc.select("title").text()+"\n";
+			
+			// lấy các section
+			Elements sections = doc.select("div.section.steps.sticky");
+
 			for (Element section : sections) {
 				Elements method = section.select("h3 > div.altblock");
-				Elements methodTitle = section.select("h3 > span.mw_headline");
+				Element methodTitle = section.select("span.mw-headline").first();
 				result += method.text() + "\n";
 				result += methodTitle.text() + "\n";
 				result += "Các bước:" + "\n";
-				Elements stepsMethod = section.select("li.hasimage");
+				Elements stepsMethod = section.select("ol > li");
 				for (Element step : stepsMethod) {
 					String stepNum = step.select("div.step_num").first().text();
 					String stepContent = step.select("div.step").text();
@@ -251,6 +255,8 @@ public class Function {
 			}
 			return TextTools.std3(result);
 		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Result: null");
 			return getResultGG(question);
 		} 
 	}
@@ -416,7 +422,7 @@ public class Function {
 		try {
 			Document ggSearch = Jsoup.connect(url).get();
 			String link = "";
-			Elements list = ggSearch.select("div.g > div.rc > div.r > a");
+			Elements list = ggSearch.select("div.g > div.rc > div > a");
 			for (Element element : list) {
 				link = element.attr("abs:href"); // lấy url trong a[href]
 				if(link.contains("wikipedia") || link.contains("yahoo") || link.contains("voz.vn")) {

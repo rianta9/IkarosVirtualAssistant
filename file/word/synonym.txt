@@ -122,7 +122,7 @@ gian dối|gian trá|gian lận
 giao phó|phó thác
 giá buốt|giá lạnh|giá rét|lạnh buốt|lạnh lẽo|rét buốt
 hôm qua|hôm trước|hôm kia|hôm đó
-hóng|trông chờ|kỳ vọng|chờ đợi|chờ|kì vọng
+hóng|trông chờ|kỳ vọng|chờ đợi|chờ |kì vọng
 hòa bình|yên bình|bình yên|an bình
 hèn nhát|nhát gan|bạc nhược|rụt rè|e lệ
 hiếm hoi|ít ỏi

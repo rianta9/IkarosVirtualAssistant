@@ -306,6 +306,8 @@ public class TextTools {
 		text = text.replace("cậu bạn", "[friend]");
 		text = text.replace("bạn bè", "[friends]");
 		text = text.replace("bạn trai", "[boy]");
+		text = text.replace("bạn tình", "[mates]");
+		text = text.replace("bạn đời", "[mate]");
 		text = text.replace("bạn nam", "[boy]");
 		text = text.replace("bạn nữ", "[girl]");
 		text = text.replace("bạn gái", "[girl]");
@@ -313,7 +315,7 @@ public class TextTools {
 		text = text.replace("nhóm bạn", "[friends]");
 		text = text.replace("bạn thân", "[best friend]");
 		text = text.replace("kết bạn", "[add friend]");
-
+		// mục đích là đây
 		text = text.replace("bạn ", "master ");
 		text = text.replace("bạn.", "master.");
 		text = text.replace("bạn?", "master?");
@@ -327,6 +329,8 @@ public class TextTools {
 		text = text.replace("[friends]", "bạn bè");
 		text = text.replace("[best friend]", "bạn thân");
 		text = text.replace("[boy]", "bạn trai");
+		text = text.replace("[mates]", "bạn tình");
+		text = text.replace("[mate]", "bạn đời");
 		text = text.replace("[girl]", "bạn gái");
 		text = text.replace("[guy]", "anh bạn");
 		text = text.replace("[add friend]", "kết bạn");
@@ -670,7 +674,7 @@ public class TextTools {
 		}
 		if (text.contains("master")) {
 			if (masterGender.equalsIgnoreCase("nam") || masterGender.equalsIgnoreCase("boy")) {
-				String[] rem = new String[] { "master", "[anh]", "[kưng]", "[master đẹp trai]", "[cưng]" };
+				String[] rem = new String[] { "master", "[anh]", "[kưng]", "[cưng]" };
 				WordDao.add(result, text, rem);
 			} else {
 				String[] rem = new String[] { "master", "[chị]", "[kưng]", "[cưng]", "[chụy]", "[bé yêu]", "[chị bé]",
@@ -681,6 +685,12 @@ public class TextTools {
 		return result;
 	}
 
+	
+	/**
+	 *  Xóa [] trong từ xưng hô
+	 * @param text
+	 * @return
+	 */
 	public static String parseAddress(String text) {
 		text = text.replace("[", "");
 		text = text.replace("]", "");

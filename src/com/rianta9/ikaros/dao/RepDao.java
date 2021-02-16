@@ -264,7 +264,7 @@ public class RepDao {
 		// Cập nhật currentFilename
 		currentFilename = String.valueOf(firstChar);
 		if(firstChar == '{') currentFilename = "khac";
-		System.out.println("Possible list to find:" + currentFilename);
+		System.out.println("Possible file data to find:" + currentFilename + ".txt");
 		
 		// Lấy vị trí trong lists
 		int position = firstChar-'a';

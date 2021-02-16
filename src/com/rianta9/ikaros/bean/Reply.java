@@ -54,15 +54,15 @@ public class Reply {
 	 */
 	public void addAnswer(String ans) {
 		String[] list = ans.split("[|]");
-		System.out.println("------Training:");
-		System.out.println("Message: "+this.baseMessage);
-		System.out.println("List Reply:");
+//		System.out.println("------Training:");
+//		System.out.println("Message: "+this.baseMessage);
+//		System.out.println("List Reply:");
 		for(String i:list) {
 			String data = TextTools.StandardReplyForTraining(i);
 			if(data != null && !data.trim().isEmpty()) {
 				if(replyMessages.contains(data) == false)
 					replyMessages.add(data);
-				System.out.println(data);
+//				System.out.println(data);
 			}
 		}
 	}
@@ -79,16 +79,16 @@ public class Reply {
 		int rand = Function.rand(n); // chọn 1 index
 		String reply = replyMessages.get(rand);
 		// Nếu reply có 15 từ trở lên thì không tạo các reply tương đồng
-		if(reply.split("[ ]").length <= 15) {
-			// Tạo các reply tương đồng và chọn 1 trong số đó để gán cho reply
-			ArrayList<String> similarReply = WordDao.similarMessages(reply);
-			System.out.println("Các câu trả lời được chọn:");
-			for (String string : similarReply) {
-				System.out.println(string);
-			}
-			rand = Function.rand(similarReply.size()); // chọn 1 index
-			reply = similarReply.get(rand);
-		}
+//		if(reply.split("[ ]").length <= 15) {
+//			// Tạo các reply tương đồng và chọn 1 trong số đó để gán cho reply
+//			ArrayList<String> similarReply = WordDao.similarMessages(reply);
+//			System.out.println("Các câu trả lời được chọn:");
+//			for (String string : similarReply) {
+//				System.out.println(string);
+//			}
+//			rand = Function.rand(similarReply.size()); // chọn 1 index
+//			reply = similarReply.get(rand);
+//		}
 		// Tạo các cách xưng hô khác nhau
 		ArrayList<String> choose = TextTools.similarAddressForData(reply, InfoDao.loadMasterInfo().getSex());
 		rand = Function.rand(choose.size());// chọn 1 để phản hồi
